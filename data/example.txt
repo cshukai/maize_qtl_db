@@ -1,1 +1,0 @@
-chr start   end trait    evidence_type  referece
