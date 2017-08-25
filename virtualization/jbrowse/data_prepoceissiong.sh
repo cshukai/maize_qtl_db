@@ -1,1 +1,0 @@
-docker cp maize/. 81f7924a2ad7:/jbrowse/data
