@@ -3,7 +3,7 @@
 rm -rf $JBROWSE_DATA;
 mkdir -p $JBROWSE_DATA/raw/;
 
-prepare-refseqs.pl --fasta $DATA_DIR/maize/GCA_000005005.6_B73_RefGen_v4_genomic.fna --out $JBROWSE_DATA;
+prepare-refseqs.pl --fasta $DATA_DIR/maize/Zea_mays.AGPv4.dna.toplevel.fa --out $JBROWSE_DATA;
 
 generate-names.pl --safeMode -v --out $JBROWSE_DATA;
 
