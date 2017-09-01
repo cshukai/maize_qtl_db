@@ -10,6 +10,10 @@ app.get('/stats/global', function(request, response) {
   response.send('Hello, World!');
 });
 
+app.get('/features/:refseq_name', function(request, response) {
+  response.send('Hello, World!');
+});
+
 // Make the app listen on port 3000
 app.listen(port, function() {
   console.log('Server listening on http://localhost:' + port);

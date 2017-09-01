@@ -1,0 +1,5 @@
+d=read.table("example.gff",sep="\t",header=T)
+out=as.matrix(table(d[,1]))
+out=cbind(out,rownames(out))
+colnames(out)=c("freq","chr")
+write.csv(out,"freq_across_chr.csv",row.names=F,quote=F)
