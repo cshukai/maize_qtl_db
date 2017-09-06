@@ -5,3 +5,6 @@ RUN pip install pdftabextract
 RUN pip install docker-compose
 RUN git clone https://github.com/cmdcolin/manytracks.git
 RUN mv manytracks ManyTracks
+RUN git clone https://github.com/cmdcolin/manytracks.git
+RUN apt-get install libfontconfig1 libfontconfig1-dev
+RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
