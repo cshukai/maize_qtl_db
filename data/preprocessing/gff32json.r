@@ -36,4 +36,6 @@
  result[[1]]=c("name","start","length","expression-level","gene-type" )
  result[[2]]=annots_2
  names(result)=c("keys","annots")
+ 
  out=toJSON(result)
+ write_json(result,path="example.gff.json")
