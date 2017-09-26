@@ -13,3 +13,6 @@ RUN apt-get install curl
 RUN apt-get install gnupg
 RUN curl -sL https://deb.nodesource.com/setup_8.x |  bash -
 RUN apt-get install nodejs
+RUN git clone https://github.com/d3-node/d3node-barchart.git
+RUN npm install d3-node
+RUN npm install d3node-barchart
