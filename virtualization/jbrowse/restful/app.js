@@ -5,7 +5,7 @@ const app = express();
 const port = 5001;
 
 app.get('/distribution', function(request, response) {
-        response.sendFile('/root/docker-jbrowse/restful/output.html');
+        response.sendFile('/var/www/html/d3node-barchart/example/output.html');
 });
 
 // Make the app listen on port 3000

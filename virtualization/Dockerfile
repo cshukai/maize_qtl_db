@@ -16,3 +16,4 @@ RUN apt-get install nodejs
 RUN git clone https://github.com/d3-node/d3node-barchart.git
 RUN npm install d3-node
 RUN npm install d3node-barchart
+RUN npm install express
