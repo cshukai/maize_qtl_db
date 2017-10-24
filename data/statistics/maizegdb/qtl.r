@@ -6,7 +6,9 @@ d2=dbReadTable(con, "TRAIT_ANALYSIS")
 d3=dbReadTable(con, "PHENOTYPE")
 d4=dbReadTable(con, "QTL_LINK_ANALYSIS")
 d5=dbReadTable(con, "PHENOTYPE_TRAIT")
-
+d6=dbReadTable(con, "LOCUS")
+#d6 contains qtl train and bin information
+qtl=d6[which(d6[,"TYPE"]==25396),]
 
 #locate useful qtl information
 ##phenotype
@@ -16,15 +18,3 @@ qtl_exp=d[which(d[,"ID"] %in% result[,"QTL_EXP"]),]
 
 ## todo- identifided which qtl are included in  47 experiments and where are they located
 dbDisconnect(con)
-
-
-QTL_LINK_ANALYSIS
-PK,FK1 ID
-NAME
-EVAL_SUMMARY
-GENETIC_MODEL
-METHOD
-NUM_DETECTED
-R_2_ALL_QTL
-SIGNIFICANCE_MEASURE
-
