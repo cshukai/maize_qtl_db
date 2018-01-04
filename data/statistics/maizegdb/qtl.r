@@ -10,7 +10,7 @@ d6=dbReadTable(con, "LOCUS")
 d7=dbReadTable(con, "LINKAGE_GROUP")
 ## qtl processing :d6 contains qtl train and bin information
 qtl=d6[intersect(which(d6[,"TYPE"]==25396),which(!is.na(d6[,"LINKAGE_GROUP"]))),]  # 25396 referes to locus that are assocaited with quantitative trait
-# convert linkdage group to chromsome
+## convert linkdage group to chromsome
 chrs=NULL
 for(i in 1:nrow(qtl)){
    this.link.group=qtl[i,"LINKAGE_GROUP"]#linkage group referes to chromosomes  
@@ -22,9 +22,16 @@ for(i in 1:nrow(qtl)){
 } 
 qtl2=cbind(qtl,chrs)
 colnames(qtl2)=c(colnames(qtl),"chrs")
-#value refers to bin location 
+###preporcessing for trait
 
-
+##map bin to physical location 
+### there are multiple versions of bin.gff correspond to different version of 
+###value refers to bin location; map "values" to  physical locations in bin.gff3
+bin_v1
+bin_files=list()
+for(i in 1:nrow(qtl2)){
+   
+}
 ##phenotype
 result=d2[which(d2[,"TRAIT"] %in% intersect(d3[,"TRAIT"],d2[,"TRAIT"])),c("TRAIT","NAME","QTL_EXP","EXPERIMENTAL_DESIGN","HERITABILITY")]
 ##qtl and evidence type (ex:f2)
@@ -33,4 +40,4 @@ qtl_exp=d[which(d[,"ID"] %in% result[,"QTL_EXP"]),]
 ## todo- identifided which qtl are included in  47 experiments and where are they located
 dbDisconnect(con)
 
-save.image()
+save.image() 
